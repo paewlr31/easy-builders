@@ -212,7 +212,7 @@ export function SiteView({ content }: { content: SiteContent }) {
 
       {whatsappHref ? (
         <a className="wa" href={whatsappHref} target="_blank" rel="noreferrer" aria-label={content.contact.whatsappLabel || "WhatsApp"}>
-          <img src="/whatsapp.jpg" alt="" />
+          <img src="/whatsapp.png" alt="" />
         </a>
       ) : null}
     </div>
