@@ -549,8 +549,7 @@ p {
 }
 
 .btn-line,
-.btn-solid,
-.wa {
+.btn-solid {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -595,10 +594,24 @@ p {
   right: 18px;
   bottom: 18px;
   z-index: 40;
-  background: var(--wa-bg);
-  color: var(--wa-text);
+  display: block;
+  width: 64px;
+  height: 64px;
+  padding: 0;
   border: 0;
+  border-radius: 18px;
+  background: transparent;
   box-shadow: 0 8px 22px rgba(40, 24, 12, 0.18);
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .wa:hover {

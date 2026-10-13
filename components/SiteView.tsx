@@ -44,6 +44,7 @@ export function SiteView({ content }: { content: SiteContent }) {
   const cityLine = [content.contact.postalCode, content.contact.city].filter(Boolean).join(" ");
   const mapHref = safeHref(content.contact.mapsUrl) || mapsLink(content.contact.street, content.contact.postalCode, content.contact.city);
   const phoneHref = telHref(content.contact.phone);
+  const phone2Href = telHref(content.contact.phone2);
   const emailHref = mailHref(content.contact.email);
   const whatsappHref = waHref(content.contact.whatsappNumber);
   const bandHref = safeHref(content.about.bandButtonHref);
@@ -184,7 +185,8 @@ export function SiteView({ content }: { content: SiteContent }) {
                 </p>
               ) : null}
               <div className="contact-actions">
-                <LineLink href={phoneHref} label={content.contact.phoneLabel} />
+                <LineLink href={phoneHref} label={content.contact.phoneLabel || content.contact.phone} />
+                <LineLink href={phone2Href} label={content.contact.phone2Label || content.contact.phone2} />
                 <LineLink href={emailHref} label={content.contact.emailLabel} />
                 <LineLink href={safeHref(content.contact.facebookUrl)} label={content.contact.facebookLabel} />
                 <LineLink href={safeHref(content.contact.instagramUrl)} label={content.contact.instagramLabel} />
@@ -208,9 +210,9 @@ export function SiteView({ content }: { content: SiteContent }) {
         </footer>
       ) : null}
 
-      {whatsappHref && content.contact.whatsappLabel.trim() ? (
-        <a className="wa" href={whatsappHref} target="_blank" rel="noreferrer">
-          {content.contact.whatsappLabel}
+      {whatsappHref ? (
+        <a className="wa" href={whatsappHref} target="_blank" rel="noreferrer" aria-label={content.contact.whatsappLabel || "WhatsApp"}>
+          <img src="/whatsapp.jpg" alt="" />
         </a>
       ) : null}
     </div>

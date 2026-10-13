@@ -732,8 +732,10 @@ function ContactTab({ content, setContent }: { content: SiteContent; setContent:
       >
         Ustaw mapę z adresu
       </button>
-      <Field label="Numer telefonu" value={contact.phone} onChange={(phone) => patch({ phone })} hint="Przycisk jest w stopce i nie jedzie za scrollem. Puste pole ukrywa przycisk." />
-      <Field label="Etykieta przycisku telefonu" value={contact.phoneLabel} onChange={(phoneLabel) => patch({ phoneLabel })} />
+      <Field label="Pierwszy numer telefonu" value={contact.phone} onChange={(phone) => patch({ phone })} hint="Przycisk jest w stopce i nie jedzie za scrollem." />
+      <Field label="Napis na pierwszym przycisku" value={contact.phoneLabel} onChange={(phoneLabel) => patch({ phoneLabel })} />
+      <Field label="Drugi numer telefonu" value={contact.phone2} onChange={(phone2) => patch({ phone2 })} hint="Puste pole ukrywa drugi przycisk." />
+      <Field label="Napis na drugim przycisku" value={contact.phone2Label} onChange={(phone2Label) => patch({ phone2Label })} />
       <Field label="E-mail" value={contact.email} onChange={(email) => patch({ email })} />
       <Field label="Etykieta przycisku e-mail" value={contact.emailLabel} onChange={(emailLabel) => patch({ emailLabel })} />
       <Field label="Facebook, pełny adres" value={contact.facebookUrl} onChange={(facebookUrl) => patch({ facebookUrl })} hint="Puste pole ukrywa przycisk. Przycisk zostaje w stopce." />

@@ -187,6 +187,8 @@ export function sanitizeContent(input: unknown): SiteContent {
       mapsUrl: asHref(contact.mapsUrl, base.contact.mapsUrl),
       phone: asString(contact.phone, base.contact.phone, 40),
       phoneLabel: asString(contact.phoneLabel, base.contact.phoneLabel, 40),
+      phone2: asString(contact.phone2, base.contact.phone2, 40),
+      phone2Label: asString(contact.phone2Label, base.contact.phone2Label, 40),
       email: asString(contact.email, base.contact.email, 160),
       emailLabel: asString(contact.emailLabel, base.contact.emailLabel, 40),
       facebookUrl: asHref(contact.facebookUrl, base.contact.facebookUrl),

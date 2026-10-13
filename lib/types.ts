@@ -110,6 +110,8 @@ export type SiteContent = {
     mapsUrl: string;
     phone: string;
     phoneLabel: string;
+    phone2: string;
+    phone2Label: string;
     email: string;
     emailLabel: string;
     facebookUrl: string;

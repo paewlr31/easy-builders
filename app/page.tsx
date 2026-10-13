@@ -40,7 +40,7 @@ export default async function Page() {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: content.contact.companyName,
-    telephone: content.contact.phone,
+    telephone: [content.contact.phone, content.contact.phone2].filter(Boolean),
     email: content.contact.email,
     address: {
       "@type": "PostalAddress",

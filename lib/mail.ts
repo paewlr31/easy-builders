@@ -1,4 +1,5 @@
 import "server-only";
+import { resendApiKey, resendFrom, resendTo } from "./config";
 
 export class ResendMissingError extends Error {
   constructor() {
@@ -22,11 +23,10 @@ type ContactMail = {
 };
 
 export async function sendContactEmail({ to, name, email, message }: ContactMail) {
-  const key = process.env.RESEND_API_KEY?.trim();
+  const key = resendApiKey;
   if (!key) throw new ResendMissingError();
-  if (!to.trim()) throw new ResendSendError("W panelu brakuje adresu e-mail, na który mają przychodzić wiadomości.");
 
-  const from = process.env.RESEND_FROM?.trim() || "Easy Builders <onboarding@resend.dev>";
+  const from = resendFrom;
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -35,10 +35,12 @@ export async function sendContactEmail({ to, name, email, message }: ContactMail
     },
     body: JSON.stringify({
       from,
-      to: [to.trim()],
+      to: [resendTo],
       reply_to: email,
       subject: `Wiadomość ze strony — ${name}`,
-      text: [`Imię: ${name}`, `E-mail: ${email}`, "", message].join("\n"),
+      text: [`Imię: ${name}`, `E-mail: ${email}`, to.trim() ? `Adres ze strony: ${to.trim()}` : "", "", message]
+        .filter((line) => line !== undefined)
+        .join("\n"),
     }),
   });
 

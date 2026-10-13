@@ -1,5 +1,6 @@
 import "server-only";
 import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
+import { databaseUrl } from "./config";
 import { defaultContent } from "./default-content";
 
 export type Sql = NeonQueryFunction<false, false>;
@@ -7,7 +8,7 @@ export type Sql = NeonQueryFunction<false, false>;
 const globalState = globalThis as unknown as { easyBuildersReady?: Promise<void> };
 
 export function getSql() {
-  const url = process.env.DATABASE_URL?.trim().replace(/^["']|["']$/g, "");
+  const url = databaseUrl.replace(/&?channel_binding=[^&]*/g, "");
   if (!url) return null;
   return neon(url);
 }
