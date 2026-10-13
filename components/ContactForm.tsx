@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 
 type Props = {
   title: string;
-  nameLabel: string;
   emailLabel: string;
   messageLabel: string;
   submitLabel: string;
@@ -13,7 +12,6 @@ type Props = {
 };
 
 export function ContactForm(props: Props) {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState("");
@@ -25,8 +23,8 @@ export function ContactForm(props: Props) {
     event.preventDefault();
     setError("");
     setStatus("");
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      setError("Uzupełnij imię, e-mail i treść.");
+    if (!email.trim() || !message.trim()) {
+      setError("Uzupełnij e-mail i treść.");
       return;
     }
     setSending(true);
@@ -34,14 +32,13 @@ export function ContactForm(props: Props) {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, website }),
+        body: JSON.stringify({ email, message, website }),
       });
       const data = (await response.json().catch(() => null)) as { error?: string; ok?: boolean } | null;
       if (!response.ok) {
         setError(data?.error || "Nie udało się wysłać wiadomości.");
         return;
       }
-      setName("");
       setEmail("");
       setMessage("");
       setStatus(props.success);
@@ -72,12 +69,12 @@ export function ContactForm(props: Props) {
         </p>
       ) : null}
       <label className="field">
-        <span>{props.nameLabel}</span>
-        <input
-          name="name"
-          autoComplete="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+        <span>{props.messageLabel}</span>
+        <textarea
+          name="message"
+          rows={6}
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
           disabled={sending}
         />
       </label>
@@ -90,16 +87,6 @@ export function ContactForm(props: Props) {
           inputMode="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          disabled={sending}
-        />
-      </label>
-      <label className="field">
-        <span>{props.messageLabel}</span>
-        <textarea
-          name="message"
-          rows={6}
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
           disabled={sending}
         />
       </label>

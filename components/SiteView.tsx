@@ -194,7 +194,6 @@ export function SiteView({ content }: { content: SiteContent }) {
             </div>
             <ContactForm
               title={content.contact.formTitle}
-              nameLabel={content.contact.formNameLabel}
               emailLabel={content.contact.formEmailLabel}
               messageLabel={content.contact.formMessageLabel}
               submitLabel={content.contact.formSubmitLabel}
@@ -211,9 +210,14 @@ export function SiteView({ content }: { content: SiteContent }) {
       ) : null}
 
       {whatsappHref ? (
-        <a className="wa" href={whatsappHref} target="_blank" rel="noreferrer" aria-label={content.contact.whatsappLabel || "WhatsApp"}>
-          <img src="/whatsapp.png" alt="" />
-        </a>
+        <div className="wa-dock">
+          <a className="wa-hint" href={whatsappHref} target="_blank" rel="noreferrer">
+            Napisz do nas na WhatsApp
+          </a>
+          <a className="wa" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Napisz do nas na WhatsApp">
+            <img src="/whatsapp.png" alt="" />
+          </a>
+        </div>
       ) : null}
     </div>
   );

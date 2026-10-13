@@ -24,8 +24,8 @@ export async function POST(request: Request) {
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const message = typeof body.message === "string" ? body.message.trim() : "";
 
-  if (!name || !email || !message) {
-    return NextResponse.json({ error: "Uzupełnij imię, e-mail i treść." }, { status: 400 });
+  if (!email || !message) {
+    return NextResponse.json({ error: "Uzupełnij e-mail i treść." }, { status: 400 });
   }
   if (name.length > 120 || email.length > 200 || message.length > 5000) {
     return NextResponse.json({ error: "Wiadomość jest za długa." }, { status: 400 });
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
 
   try {
     const content = await getContent();
-    await sendContactEmail({ to: content.contact.email, name, email, message });
+    await sendContactEmail({ to: content.contact.email, name: name || "Formularz", email, message });
   } catch (error) {
     if (error instanceof ResendMissingError) {
       return NextResponse.json(
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    await addMessage(name, email, message);
+    await addMessage(name || "Formularz", email, message);
   } catch (error) {
     if (!(error instanceof DatabaseMissingError)) console.error(error);
   }

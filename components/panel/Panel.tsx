@@ -750,7 +750,6 @@ function ContactTab({ content, setContent }: { content: SiteContent; setContent:
       />
       <Field label="Etykieta WhatsApp" value={contact.whatsappLabel} onChange={(whatsappLabel) => patch({ whatsappLabel })} />
       <Field label="Tytuł formularza" value={contact.formTitle} onChange={(formTitle) => patch({ formTitle })} />
-      <Field label="Etykieta pola imienia" value={contact.formNameLabel} onChange={(formNameLabel) => patch({ formNameLabel })} />
       <Field label="Etykieta pola e-mail" value={contact.formEmailLabel} onChange={(formEmailLabel) => patch({ formEmailLabel })} />
       <Field label="Etykieta treści" value={contact.formMessageLabel} onChange={(formMessageLabel) => patch({ formMessageLabel })} />
       <Field label="Napis na przycisku wysyłki" value={contact.formSubmitLabel} onChange={(formSubmitLabel) => patch({ formSubmitLabel })} />

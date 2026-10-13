@@ -210,7 +210,7 @@ export const defaultContent: SiteContent = {
     phoneLabel: "+48 570 080 088",
     phone2: "+48 661 304 330",
     phone2Label: "+48 661 304 330",
-    email: "biuro@easybuilders.pl",
+    email: "kawasa108@gmail.com",
     emailLabel: "E-mail",
     facebookUrl: "https://www.facebook.com/share/1GsEgY9Tew/?mibextid=wwXIfr",
     facebookLabel: "Facebook",
@@ -224,8 +224,7 @@ export const defaultContent: SiteContent = {
     formMessageLabel: "Treść wiadomości",
     formSubmitLabel: "Wyślij",
     formSuccess: "Dziękujemy. Wiadomość została wysłana.",
-    formNote:
-      "Wysyłając wiadomość, przekazujesz imię i adres e-mail wyłącznie po to, żebyśmy mogli odpowiedzieć.",
+    formNote: "Wysyłając wiadomość, przekazujesz adres e-mail wyłącznie po to, żebyśmy mogli odpowiedzieć.",
   },
   seo: {
     title: "Easy Builders — instalacje we Wrocławiu",

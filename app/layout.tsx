@@ -4,7 +4,7 @@ import "./globals.css";
 
 const sans = Montserrat({
   subsets: ["latin", "latin-ext"],
-  weight: ["200", "300", "400", "500", "600"],
+  weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
