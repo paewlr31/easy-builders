@@ -210,7 +210,7 @@ export const defaultContent: SiteContent = {
     phoneLabel: "+48 570 080 088",
     phone2: "+48 661 304 330",
     phone2Label: "+48 661 304 330",
-    email: "kawasa108@gmail.com",
+    email: "ebzapytania@gmail.com",
     emailLabel: "E-mail",
     facebookUrl: "https://www.facebook.com/share/1GsEgY9Tew/?mibextid=wwXIfr",
     facebookLabel: "Facebook",

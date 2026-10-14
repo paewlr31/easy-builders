@@ -10,4 +10,4 @@ export const resendApiKey = resendKeyFromEnv || "";
 
 export const resendFrom = resendFromEnv || "Easy Builders <onboarding@resend.dev>";
 
-export const resendTo = "kawasa108@gmail.com";
+export const resendTo = "ebzapytania@gmail.com";
