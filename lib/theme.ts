@@ -10,7 +10,7 @@ export const colorFields = [
   { key: "text", group: "Tło i tekst", label: "Tekst akapitów" },
   { key: "muted", group: "Tło i tekst", label: "Drobne podpisy i numery usług" },
   { key: "serviceTitle", group: "Tło i tekst", label: "Nazwy usług" },
-  { key: "heroText", group: "Hero", label: "Napis easy builders i INSTALACJE" },
+  { key: "heroText", group: "Hero", label: "Napis easy builders na zdjęciu" },
   { key: "heroScrim", group: "Hero", label: "Przyciemnienie zdjęcia, żeby biały napis był czytelny" },
   { key: "bandBg", group: "Pas O nas", label: "Tło pasa" },
   { key: "bandText", group: "Pas O nas", label: "Tekst pasa" },

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "./globals.css";
 
-const sans = Montserrat({
+// Nagłówki: Public Sans. Treść: Arial (ustawione w globals.css).
+const heading = Public_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-heading",
   display: "swap",
 });
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pl" className={sans.variable}>
+    <html lang="pl" className={heading.variable}>
       <body>{children}</body>
     </html>
   );

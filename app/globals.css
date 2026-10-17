@@ -12,9 +12,9 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-sans), "Segoe UI", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
-  color: #3c2918;
+  color: #000000;
   background: #fff;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -29,6 +29,14 @@ textarea {
 img {
   max-width: 100%;
   display: block;
+}
+
+h1,
+h2,
+h3,
+.brand,
+.contact-brand {
+  font-family: var(--font-heading), Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -63,7 +71,7 @@ p {
   top: -48px;
   z-index: 80;
   background: #fff;
-  color: #3c2918;
+  color: #000000;
   padding: 8px 12px;
 }
 
@@ -126,15 +134,17 @@ p {
   text-decoration: none;
   font-size: 0.72rem;
   font-weight: 500;
+  /* Arial nie ma grubości pośredniej, więc lekkie pogrubienie robimy bardzo cienkim obrysem. */
+  -webkit-text-stroke: 0.3px currentColor;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.82;
   white-space: nowrap;
 }
 
 .nav a:hover,
 .nav a[aria-current="true"] {
-  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .brand {
@@ -152,10 +162,10 @@ p {
   min-height: calc(100vh - 68px);
   min-height: calc(100svh - 68px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   color: var(--hero-text);
-  background: #1c1008;
+  background: #361a08;
 }
 
 .no-bar .hero {
@@ -174,7 +184,7 @@ p {
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(28, 16, 8, 0.62), rgba(28, 16, 8, 0.28) 46%, rgba(28, 16, 8, 0.08));
+  background: linear-gradient(90deg, rgba(54, 26, 8, 0.62), rgba(54, 26, 8, 0.28) 46%, rgba(54, 26, 8, 0.08));
   background: linear-gradient(
     90deg,
     color-mix(in srgb, var(--hero-scrim) 68%, transparent),
@@ -186,7 +196,7 @@ p {
 .hero-inner {
   position: relative;
   z-index: 1;
-  padding: 64px 0;
+  padding: 40px 0 64px;
 }
 
 .hero-title {
@@ -259,7 +269,7 @@ p {
 .media {
   position: relative;
   overflow: hidden;
-  background: #e7d3ae;
+  background: #fbe8c4;
 }
 
 .media > img,
@@ -272,7 +282,7 @@ p {
 }
 
 .photo-fallback {
-  background: linear-gradient(160deg, #edd9b4, #c6a36d);
+  background: linear-gradient(160deg, #fbe8c4, #746458);
 }
 
 .service-media {
@@ -371,6 +381,7 @@ p {
   grid-column: 2;
   grid-row: 1;
   margin: 0;
+  color: var(--heading);
   font-size: clamp(1.7rem, 2.6vw, 2.15rem);
   font-weight: 500;
   line-height: 1.15;
@@ -607,11 +618,11 @@ p {
   padding: 0 16px;
   border-radius: 14px;
   background: #ffffff;
-  color: #3c2918;
+  color: #000000;
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  box-shadow: 0 8px 22px rgba(40, 24, 12, 0.18);
+  box-shadow: 0 8px 22px rgba(54, 26, 8, 0.18);
 }
 
 .wa {
@@ -623,7 +634,7 @@ p {
   border: 0;
   border-radius: 18px;
   background: transparent;
-  box-shadow: 0 8px 22px rgba(40, 24, 12, 0.18);
+  box-shadow: 0 8px 22px rgba(54, 26, 8, 0.18);
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
@@ -655,8 +666,8 @@ p {
   place-content: center;
   gap: 12px;
   padding: 32px;
-  background: #3c2918;
-  color: #f7f1e6;
+  background: #361a08;
+  color: #fdfdfd;
 }
 
 .missing-brand {
@@ -674,8 +685,8 @@ p {
 .missing a,
 .missing button {
   justify-self: start;
-  color: #3c2918;
-  background: #f4e6c8;
+  color: #000000;
+  background: #fbe8c4;
   border: 0;
   border-radius: 8px;
   min-height: 44px;
@@ -687,7 +698,7 @@ p {
 }
 
 :focus-visible {
-  outline: 2px solid #3c2918;
+  outline: 2px solid #371a09;
   outline-offset: 3px;
 }
 
@@ -696,7 +707,7 @@ p {
 .contact :focus-visible,
 .wa:focus-visible,
 .missing :focus-visible {
-  outline-color: #f4e6c8;
+  outline-color: #fbe8c4;
 }
 
 @media (hover: hover) {
@@ -735,39 +746,47 @@ p {
 
 @media (max-width: 720px) {
   .topbar-inner {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: start;
-    min-height: 0;
-    padding: 8px 0 2px;
-    row-gap: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 56px;
+    padding: 4px 0;
   }
 
   .brand {
-    justify-self: start;
+    justify-self: auto;
     margin: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0;
   }
 
   .nav {
-    justify-self: stretch;
-    width: 100%;
+    justify-self: auto;
+    flex: 0 1 auto;
+    width: auto;
     max-width: 100%;
     min-width: 0;
-    margin: 0;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    overflow: visible;
-    gap: 0 14px;
+    margin: 0 0 0 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 0 4px;
   }
 
   .nav a {
-    min-height: 36px;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
+    min-height: 40px;
+    font-size: 0.58rem;
+    letter-spacing: 0.03em;
   }
 
   .hero {
-    min-height: calc(100svh - 108px);
+    min-height: calc(100svh - 56px);
+  }
+
+  .hero-inner {
+    padding: 36px 0 56px;
   }
 }
 
