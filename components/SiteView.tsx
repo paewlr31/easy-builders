@@ -74,7 +74,18 @@ export function SiteView({ content }: { content: SiteContent }) {
             <div className="hero-shade" />
             <div className="wrap hero-inner">
               {content.hero.title ? <h1 className="hero-title">{content.hero.title}</h1> : null}
-              {content.hero.subtitle ? <p className="hero-sub">{content.hero.subtitle}</p> : null}
+    
+{content.hero.subtitle ? (
+  <div className="hero-sub">
+    {content.hero.subtitle
+      .split("•")
+      .filter((item) => item.trim())
+      .map((item, index) => (
+        <span key={index}>• {item.trim()}</span>
+      ))}
+  </div>
+) : null}
+
             </div>
           </section>
         ) : null}
@@ -177,8 +188,8 @@ export function SiteView({ content }: { content: SiteContent }) {
               {content.contact.brand ? <p className="contact-brand">{content.contact.brand}</p> : null}
               {content.contact.subtitle ? <p className="contact-kicker">{content.contact.subtitle}</p> : null}
               {content.contact.tagline ? <p className="tagline pre">{content.contact.tagline}</p> : null}
-              {content.contact.companyName ? <p className="company">{content.contact.companyName}</p> : null}
-              {content.contact.street || cityLine ? (
+              {/*content.contact.companyName ? <p className="company">{content.contact.companyName}</p> : null*/}
+              {/* {content.contact.street || cityLine ? (
                 <p className="addr">
                   <a href={mapHref} target="_blank" rel="noreferrer">
                     {content.contact.street}
@@ -186,7 +197,7 @@ export function SiteView({ content }: { content: SiteContent }) {
                     {cityLine}
                   </a>
                 </p>
-              ) : null}
+              ) : null} */}
               <div className="contact-actions">
                 <LineLink href={phoneHref} label={content.contact.phoneLabel || content.contact.phone} />
                 <LineLink href={phone2Href} label={content.contact.phone2Label || content.contact.phone2} />
