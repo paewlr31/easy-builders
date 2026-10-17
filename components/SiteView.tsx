@@ -51,7 +51,7 @@ export function SiteView({ content }: { content: SiteContent }) {
 
   return (
     <div className={showBar ? "site" : "site no-bar"} style={themeStyle(content.colors)}>
-      <a className="skip" href="#uslugi">
+      <a className="skip" href="#realizacje">
         Przejdź do treści
       </a>
       {showBar ? (
@@ -79,6 +79,8 @@ export function SiteView({ content }: { content: SiteContent }) {
           </section>
         ) : null}
 
+        {/* Sekcja "Usługi" — tymczasowo wyłączona na życzenie klienta.
+            Nie usuwamy jej: przywracamy, usuwając ten komentarz.
         {content.services.visible ? (
           <section className="section" id="uslugi">
             <div className="wrap">
@@ -93,6 +95,30 @@ export function SiteView({ content }: { content: SiteContent }) {
                     {item.number ? <p className="service-no">{item.number}</p> : null}
                     {item.title ? <h3>{item.title}</h3> : null}
                     {item.description ? <p className="pre">{item.description}</p> : null}
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+        */}
+
+        {content.projects.visible ? (
+          <section className="section" id="realizacje">
+            <div className="wrap">
+              {content.projects.title ? <h2 className="section-title">{content.projects.title}</h2> : null}
+              {content.projects.intro ? <p className="lead pre">{content.projects.intro}</p> : null}
+              <div className="project-list">
+                {content.projects.items.map((item, index) => (
+                  <article className={index % 2 === 1 ? "project reverse" : "project"} key={item.id}>
+                    <div className="media project-media">
+                      <Frame src={item.image} alt={item.imageAlt || item.title} />
+                    </div>
+                    <div className="project-copy">
+                      {item.number ? <p className="project-no">{item.number}</p> : null}
+                      {item.title ? <h3>{item.title}</h3> : null}
+                      {item.description ? <p className="pre">{item.description}</p> : null}
+                    </div>
                   </article>
                 ))}
               </div>
@@ -137,29 +163,6 @@ export function SiteView({ content }: { content: SiteContent }) {
                     </article>
                   ))}
                 </div>
-              </div>
-            </div>
-          </section>
-        ) : null}
-
-        {content.projects.visible ? (
-          <section className="section" id="realizacje">
-            <div className="wrap">
-              {content.projects.title ? <h2 className="section-title">{content.projects.title}</h2> : null}
-              {content.projects.intro ? <p className="lead pre">{content.projects.intro}</p> : null}
-              <div className="project-list">
-                {content.projects.items.map((item, index) => (
-                  <article className={index % 2 === 1 ? "project reverse" : "project"} key={item.id}>
-                    <div className="media project-media">
-                      <Frame src={item.image} alt={item.imageAlt || item.title} />
-                    </div>
-                    <div className="project-copy">
-                      {item.number ? <p className="project-no">{item.number}</p> : null}
-                      {item.title ? <h3>{item.title}</h3> : null}
-                      {item.description ? <p className="pre">{item.description}</p> : null}
-                    </div>
-                  </article>
-                ))}
               </div>
             </div>
           </section>

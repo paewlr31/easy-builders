@@ -39,9 +39,10 @@ export const defaultContent: SiteContent = {
   header: {
     brand: "easy builders",
     nav: [
-      { id: "nav-uslugi", label: "Usługi", href: "#uslugi" },
-      { id: "nav-onas", label: "O nas", href: "#o-nas" },
+      // Pozycja "Usługi" — tymczasowo wyłączona razem z sekcją. Przywrócić, usuwając komentarz.
+      // { id: "nav-uslugi", label: "Usługi", href: "#uslugi" },
       { id: "nav-realizacje", label: "Realizacje", href: "#realizacje" },
+      { id: "nav-onas", label: "O nas", href: "#o-nas" },
       { id: "nav-kontakt", label: "Kontakt", href: "#kontakt" },
     ],
   },
