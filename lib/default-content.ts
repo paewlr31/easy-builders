@@ -49,7 +49,7 @@ export const defaultContent: SiteContent = {
   hero: {
     visible: true,
     title: "easy builders",
-    subtitle: "",
+    subtitle: "• projekt • wykończenie • meble",
     image: photo("photo-1600607687939-ce8a6c25118c", 2000),
     imageAlt: "Jasne wnętrze z dużymi oknami i zielenią za szybą",
   },
@@ -119,19 +119,19 @@ export const defaultContent: SiteContent = {
     visible: true,
     bandTitle: "O nas",
     bandText:
-      "Pomagamy tworzyć sprawne i funkcjonalne instalacje. Zapewniamy staranne wykonanie, jasną komunikację i sprawną realizację każdego projektu.",
+      "Pomagamy tworzyć sprawne i funkcjonalne wnętrza. Zapewniamy staranne wykonanie, jasną komunikację i sprawną realizację każdego projektu.",
     bandButtonLabel: "Więcej o nas",
     bandButtonHref: "#dlaczego",
     title: "Dlaczego my",
     intro:
-      "Easy Builders sp. z o.o. działa we Wrocławiu. Instalacje prowadzimy jako jedną robotę: od tras i ustaleń, przez montaż, po uruchomienie.",
+      "Easy Builders sp. z o.o. działa we Wrocławiu. Projekt, wykończenie i meble prowadzimy jako jedną robotę: od ustaleń, przez montaż, po odbiór.",
     items: [
       {
         id: "about-1",
         number: "01",
         title: "Kompleksowe podejście",
         description:
-          "Elektryka, woda, klimat, wentylacja, ogrzewanie i smart home ustalamy razem. Instalacje nie kolidują ze sobą w ścianie ani w terminie.",
+          "Elektryka, woda, klimat, wentylacja, ogrzewanie i smart home ustalamy razem. Prace nie kolidują ze sobą w ścianie ani w terminie.",
         image: photo("photo-1600566753086-00f18fb6b3ea"),
         imageAlt: "Kuchnia z drewnem i ciepłym światłem",
       },
@@ -140,7 +140,7 @@ export const defaultContent: SiteContent = {
         number: "02",
         title: "Precyzyjne wykonanie",
         description:
-          "Trasy, spadki, podejścia i rozdzielnice robimy tak, jak zostały ustalone. Po zakończeniu zostaje działająca instalacja, nie lista niedoróbek.",
+          "Trasy, spadki, podejścia i rozdzielnice robimy tak, jak zostały ustalone. Po zakończeniu zostaje gotowe wnętrze, nie lista niedoróbek.",
         image: photo("photo-1600489000022-c2086d79f9d4"),
         imageAlt: "Elewacja domu jednorodzinnego",
       },
@@ -200,7 +200,7 @@ export const defaultContent: SiteContent = {
     visible: true,
     brand: "easy builders",
     subtitle: "",
-    tagline: "Wiodąca firma instalacyjna w Twojej okolicy.",
+    tagline: "• projekt • wykończenie • meble",
     companyName: "Easy Builders sp. z o.o.",
     street: "Plac Świętego Macieja 7/6",
     postalCode: "50-244",
@@ -228,8 +228,8 @@ export const defaultContent: SiteContent = {
     formNote: "Wysyłając wiadomość, przekazujesz adres e-mail wyłącznie po to, żebyśmy mogli odpowiedzieć.",
   },
   seo: {
-    title: "Easy Builders — instalacje we Wrocławiu",
+    title: "Easy Builders — projekt • wykończenie • meble | Wrocław",
     description:
-      "Elektryka, hydraulika, klimatyzacja, wentylacja, ogrzewanie i smart home. Easy Builders sp. z o.o., Plac Świętego Macieja 7/6, Wrocław.",
+      "Projekt • wykończenie • meble. Easy Builders sp. z o.o., Plac Świętego Macieja 7/6, Wrocław.",
   },
 };
