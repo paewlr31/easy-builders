@@ -198,7 +198,7 @@ export const defaultContent: SiteContent = {
   contact: {
     visible: true,
     brand: "easy builders",
-    subtitle: "INSTALACJE",
+    subtitle: "",
     tagline: "Wiodąca firma instalacyjna w Twojej okolicy.",
     companyName: "Easy Builders sp. z o.o.",
     street: "Plac Świętego Macieja 7/6",
